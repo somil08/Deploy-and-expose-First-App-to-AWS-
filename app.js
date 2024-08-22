@@ -21,8 +21,8 @@ const reviewsRouter = require("./routes/reviews.js");
 const usersRouter = require("./routes/users.js");
 // mongoDb setup :----------------------------------------------------------------------------------------------------
 const mongoose = require("mongoose");
-const MONGO_url = "mongodb://127.0.0.1:27017/crush1";
-// const Db_url = process.env.ATLASDB_URL
+// const MONGO_url = "mongodb://127.0.0.1:27017/crush1";
+const Db_url = process.env.ATLASDB_URL
 
 main()
   .then((res) => {
@@ -31,7 +31,7 @@ main()
   .catch((err) => console.log(err));
 
 async function main() {
-  await mongoose.connect(MONGO_url);
+  await mongoose.connect(Db_url);
 }
 // ---------------------------------------------------------------------------------------------------------------------
 app.set("view engine", "ejs");
@@ -41,19 +41,19 @@ app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 app.engine("ejs", ejsMate);
 
-//  const store = MongoStore.create({
-//   mongoUrl:Db_url,
-//   crypto:{
-//     secret:process.env.SECRET
-//   },
-//   touchAfter:24*3600,
-// })
-// store.on("error",()=>{
-//   console.log("ERROR IN MONGO SESSION STORE",err)
-// });
+ const store = MongoStore.create({
+  mongoUrl:Db_url,
+  crypto:{
+    secret:process.env.SECRET
+  },
+  touchAfter:24*3600,
+})
+store.on("error",()=>{
+  console.log("ERROR IN MONGO SESSION STORE",err)
+});
 
 const sessionOptions = {
-  // store,
+  store,
   secret: process.env.SECRET,
   resave: false,
   saveUninitialized: true,
