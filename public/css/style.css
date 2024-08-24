@@ -105,7 +105,14 @@ opacity: 0;
     padding-right: 0;
 }
 /* * map */ */
-#map{
+/* #map{
 height: 400px;
 width: 80vh;
+} */
+/* Map container */
+.map {
+    height: 400px;
+    width: 80px; 
+ 
 }
+

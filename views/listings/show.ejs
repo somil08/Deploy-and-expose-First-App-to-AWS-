@@ -1,8 +1,7 @@
 <% layout("/layouts/boilerplate") -%>
 <script>
-  const mapToken = "<%=process.env.MAP_TOKEN%>"
-  const coordinates = <%- JSON.stringify(listing.geometry.coordinates)%>
-
+  const mapToken = "<%= process.env.MAP_TOKEN %>";
+  const coordinates = <%- JSON.stringify(listing.geometry.coordinates) %>;
 </script>
 <div class="row mt-3">
   <div class="col-8 offset-3">
@@ -41,9 +40,8 @@
   </div>
   <%}%>
   <div class="col-8 offset-3 mb-3">
- 
     <%if(curruser){%>
-      <hr />
+    <hr />
     <h4>Leave a Review</h4>
     <form
       action="/listings/<%= listing._id %>/reviews"
@@ -118,8 +116,7 @@
     </form>
 
     <hr />
-    <%}%>
-    <% if(listing.review.length > 0) {%>
+    <%}%> <% if(listing.review.length > 0) {%>
     <div class="row">
       <p><b>All Reviews</b></p>
       <% for (let review of listing.review) { %>
@@ -141,12 +138,25 @@
         </div>
       </div>
       <% } %>
-    </div><% } %>
-  </div>
-  <div class="col-8 offset-3 mb-3">
-    <h3>Where you'll be</h3>
-    <div id="map"></div>
+    </div>
+    <% } %>
+    <div class="mt-5">
+      <h3>Where you'll be</h3>
+      <div id="map" style="height: 400px; width: 90vh;" 
+      ></div>
+    </div>
   </div>
 </div>
 <script src="/js/map.js"></script>
+<!-- <script>
+  mapboxgl.accessToken = mapToken;
+  const map = new mapboxgl.Map({
+      container: 'map',
+      center: coordinates,
+      zoom: 10
+  });
 
+  new mapboxgl.Marker({ color: "red" })
+      .setLngLat(coordinates)
+      .addTo(map);
+</script> -->
