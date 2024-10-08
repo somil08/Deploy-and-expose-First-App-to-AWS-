@@ -2,7 +2,7 @@ Deploy-and-expose-First-App-to-AWS-
 
 # Real Estate & Vacation Rentals Platform
 <img width="1200" height="300" alt="Screenshot 2024-10-09 at 4 14 29 AM" src="https://github.com/user-attachments/assets/09d668ca-ea98-414f-a8d2-a680eb1c9e67">
-<img width="600" height="300"alt="Screenshot 2024-10-09 at 4 16 25 AM" src="https://github.com/user-attachments/assets/23ea92a2-1c50-417a-bc1a-1147a2aa017c"><img width="600" height="300"alt="Screenshot 2024-10-09 at 4 15 44 AM" src="https://github.com/user-attachments/assets/f435f0e1-a540-4c32-83a5-4706cd0b43ab">
+<img width="400" height="300"alt="Screenshot 2024-10-09 at 4 16 25 AM" src="https://github.com/user-attachments/assets/23ea92a2-1c50-417a-bc1a-1147a2aa017c"><img width="400" height="300"alt="Screenshot 2024-10-09 at 4 15 44 AM" src="https://github.com/user-attachments/assets/f435f0e1-a540-4c32-83a5-4706cd0b43ab">
 
 
 ## Overview
